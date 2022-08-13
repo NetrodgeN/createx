@@ -1,0 +1,40 @@
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.main-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-event-list{
+  margin: 0;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  color:$color-black;
+}
+.title-event-list-2{
+  font-weight: 900;
+  font-size: 4.6rem;
+  margin-top: 16px;
+  letter-spacing: -0.3px;
+
+  color:$color-black;
+}
+
+.rectangle{
+  display: flex;
+  height: 126px;
+  width: 1230px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #E5E8ED;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.dd{
+  color:$color-orange;
+}
