@@ -7,11 +7,15 @@ import EventFilter from './EventFilter';
 const Events = () => {
   const [filter, setFilter] = useState({ category: 'all themes', sort: '', search: '' });
   const { events, error, loading } = useSelector((state) => state.events);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(9)
+  console.log(limit)
   const sortOptions = [...new Set([...events].map((e) => e.type))];
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getEvents());
-  }, []);
+    dispatch(getEvents(page, limit));
+  }, [page, limit]);
 
   //категории сотрировка
   const sortedEventCategory = useMemo(() => {
@@ -35,19 +39,22 @@ const Events = () => {
     );
   }, [filter.search, sortedEventCategory, sorted, events]);
 
-  if (loading) {
-    return <h1>идёт загрузка</h1>;
-  }
-  if (error) {
-    return <h1>{error}</h1>;
-  }
+  // if (loading) {
+  //   return <h1>идёт загрузка</h1>;
+  // }
+  // if (error) {
+  //   return <h1>{error}</h1>;
+  // }
 
   return (
     <div className="wrapper main-wrapper">
       <p className="title-event-list">OUR EVENTS</p>
       <h1 className="title-event-list-2">Lectures, workshops & master-classes</h1>
-      <EventFilter filter={filter} setFilter={setFilter} sortOptions={sortOptions} />
+      <EventFilter filter={filter} setFilter={setFilter} sortOptions={sortOptions} setLimit={setLimit} />
       <EventsList sortedEvent={sortedAndSearched} />
+      {/*<div className='pages'>*/}
+      {/*  {pages.map((page,index)=> <span key={index} className={currentPage === page ? 'current-page' : 'page'}>{page}</span>)}*/}
+      {/*</div>*/}
     </div>
   );
 };

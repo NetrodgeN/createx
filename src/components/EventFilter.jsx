@@ -1,7 +1,7 @@
 import React from 'react';
 import MySelect from './select/MySelect';
 
-const EventFilter = ({ filter, setFilter, sortOptions }) => {
+const EventFilter = ({ filter, setFilter, sortOptions, setLimit }) => {
   return (
     <div className="toolbar">
       <span>Event category</span>
@@ -20,12 +20,12 @@ const EventFilter = ({ filter, setFilter, sortOptions }) => {
         options={['oldest']}
       />
       <span>Show</span>
-      {/*<select>*/}
-      {/*  <option value='value3'>9</option>*/}
-      {/*  <option value='value3'>12</option>*/}
-      {/*  <option value='value3'>15</option>*/}
-      {/*  <option value='value3'>18</option>*/}
-      {/*</select>*/}
+      <select onChange={event => setLimit(event.target.value)}>
+        <option value='9'>9</option>
+        <option value='12'>12</option>
+        <option value='15'>15</option>
+        <option value='18'>18</option>
+      </select>
       <input
         type="search"
         placeholder={'Search event...'}

@@ -83,7 +83,7 @@ a {
 }
 
 .open {
-  color: #FF3F3A;
+  color: #631817;
 }
 
 .slash {
@@ -130,7 +130,22 @@ a {
 }
 
 .dd {
-  color: #FF3F3A;
+  color: #631817;
+}
+
+.pages {
+  margin: 20px 0;
+}
+.pages .page, .pages .current-page {
+  border: 1px solid #631817;
+  border-radius: 100%;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.pages .current-page {
+  border: 2px solid #631817FF;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

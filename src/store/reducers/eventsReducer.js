@@ -2,14 +2,13 @@ const FETCH_EVENTS = 'FETCH_EVENTS'
 const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS'
 const FETCH_EVENTS_ERROR = 'FETCH_EVENTS_ERROR'
 
-
-const inititalState = {
+const initialState = {
   events:[],
   loading: false,
   error:null,
 }
 
-export const eventsReducer = (state = inititalState, action) =>{
+export const eventsReducer = (state = initialState, action) =>{
   switch (action.type){
     case FETCH_EVENTS:
       return {loading: true, error:null, events:[]}
