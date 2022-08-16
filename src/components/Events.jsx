@@ -1,37 +1,39 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEvents } from '../store/action-creators/action';
-import MySelect from './select/MySelect';
 import EventsList from './EventsList';
-
-
+import EventFilter from './EventFilter';
 
 const Events = () => {
-  const [filter, setFilter] = useState({ category: '', sort:'', });
-  // const [searchQuery, setSearchQuery] = useState('')
+  const [filter, setFilter] = useState({ category: 'all themes', sort: '', search: '' });
   const { events, error, loading } = useSelector((state) => state.events);
+  const sortOptions = [...new Set([...events].map((e) => e.type))];
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getEvents());
   }, []);
 
-  const sortOptions = [...new Set([...events].map(e => e.type))]
-
-  // const sorted = useMemo(() =>{
-  //   if(filter.sort === 'date'){
-  //     return [...events].sort((a, b) => a[filter.sort] > b[filter.sort] ? 1 : -1)
-  //   }
-  //   //сделать как если сорт равен date
-  //   return [...events].sort((a, b) => a[filter.sort] < b[filter.sort] ? 1 : -1)
-  //   return events
-  // },[filter.sort, events])
-
+  //категории сотрировка
   const sortedEventCategory = useMemo(() => {
     if (filter.category !== 'all themes') {
       return [...events].filter((a) => a.type === filter.category);
     }
     return events;
   }, [filter.category, events]);
+
+  const sorted = useMemo(() => {
+    if (filter.sort === 'oldest') {
+      return [...sortedEventCategory].sort((a, b) => (a.date < b.date ? 1 : -1));
+    }
+    return [...sortedEventCategory].sort((a, b) => (a.date > b.date ? 1 : -1));
+  }, [filter.sort, events, sortedEventCategory]);
+
+  //старые и новые посты
+  const sortedAndSearched = useMemo(() => {
+    return sorted.filter((element) =>
+      element.title.toLowerCase().includes(filter.search.toLowerCase())
+    );
+  }, [filter.search, sortedEventCategory, sorted, events]);
 
   if (loading) {
     return <h1>идёт загрузка</h1>;
@@ -44,44 +46,8 @@ const Events = () => {
     <div className="wrapper main-wrapper">
       <p className="title-event-list">OUR EVENTS</p>
       <h1 className="title-event-list-2">Lectures, workshops & master-classes</h1>
-
-      <div className="toolbar">
-        <span>Event category</span>
-        <MySelect
-          value={filter.category}
-          onChange={(selectedSort) => setFilter({ ...filter, category: selectedSort })}
-          options={sortOptions}
-          defaultValue={'all themes'}
-        />
-
-        <span>Sort by</span>
-        {/*<MySelect*/}
-        {/*  value={searchQuery}*/}
-        {/*  onChange={e => setSearchQuery(e.target.value)}*/}
-        {/*  options={[*/}
-        {/*    {value: 'date', name: 'newset'},*/}
-        {/*    {value: 'oldest', name: 'oldest'},*/}
-        {/*  ]}*/}
-        {/*/>*/}
-        <span>Show</span>
-        {/*<select>*/}
-        {/*  <option value='value3'>9</option>*/}
-        {/*  <option value='value3'>12</option>*/}
-        {/*  <option value='value3'>15</option>*/}
-        {/*  <option value='value3'>18</option>*/}
-        {/*</select>*/}
-        <input
-          type='search'
-          placeholder={'Search event...'}
-          value={filter.search}
-          onChange={e => setFilter({search: e.target.value})}
-        />
-        <i></i>
-        <img src="#" alt="" />
-        <img src="#" alt="" />
-      </div>
-
-      <EventsList sortedEvent={sortedEventCategory} />
+      <EventFilter filter={filter} setFilter={setFilter} sortOptions={sortOptions} />
+      <EventsList sortedEvent={sortedAndSearched} />
     </div>
   );
 };
