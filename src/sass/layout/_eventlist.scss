@@ -136,7 +136,7 @@ input{
   }
 }
 .grid{
-  padding-left: 10px;
+  padding-right: 10px;
 }
 .search-loupe{
   box-sizing: border-box;
@@ -232,5 +232,11 @@ input{
   display: flex;
   flex-wrap: wrap;
   gap:30px;
-  //
+}
+
+.active-list{
+  fill: $color-orange;
+}
+.active-grid{
+  fill:$color-orange;
 }

@@ -245,7 +245,7 @@ input {
 }
 
 .grid {
-  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .search-loupe {
@@ -343,6 +343,14 @@ input {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.active-list {
+  fill: #FF3F3A;
+}
+
+.active-grid {
+  fill: #FF3F3A;
 }
 
 /*# sourceMappingURL=style.css.map */
