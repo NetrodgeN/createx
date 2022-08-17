@@ -9,7 +9,8 @@ const Events = () => {
   const { events, error, loading } = useSelector((state) => state.events);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(9)
-  console.log(limit)
+  const [isShow, setIsShow] = useState(true);
+
   const sortOptions = [...new Set([...events].map((e) => e.type))];
   const dispatch = useDispatch();
 
@@ -45,13 +46,24 @@ const Events = () => {
   // if (error) {
   //   return <h1>{error}</h1>;
   // }
+  const [isGrid, setIsGrid] = useState('list');
 
   return (
     <div className="wrapper main-wrapper">
       <p className="title-event-list">OUR EVENTS</p>
       <h1 className="title-event-list-2">Lectures, workshops & master-classes</h1>
-      <EventFilter filter={filter} setFilter={setFilter} sortOptions={sortOptions} setLimit={setLimit} limit={limit} />
-      <EventsList sortedEvent={sortedAndSearched} />
+      <EventFilter
+        filter={filter}
+        setFilter={setFilter}
+        sortOptions={sortOptions}
+        setLimit={setLimit}
+        limit={limit}
+        // isGrid={isGrid}
+        // setIsGrid={setIsGrid}
+        isShow={isShow}
+        setIsShow={setIsShow}
+      />
+      <EventsList sortedEvent={sortedAndSearched} isShow={isShow}/>
       {/*<div className='pages'>*/}
       {/*  {pages.map((page,index)=> <span key={index} className={currentPage === page ? 'current-page' : 'page'}>{page}</span>)}*/}
       {/*</div>*/}

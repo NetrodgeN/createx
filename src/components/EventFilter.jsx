@@ -3,7 +3,9 @@ import MySelect from './select/MySelect';
 import list from './list.png';
 import grid from './grid.png';
 
-const EventFilter = ({ filter, setFilter, sortOptions,limit, setLimit }) => {
+const EventFilter = ({ filter, setFilter, sortOptions,limit, setLimit, isShow,setIsShow }) => {
+
+
   return (
     <div className="toolbar">
       <div className={'toolbar__block'}>
@@ -45,8 +47,14 @@ const EventFilter = ({ filter, setFilter, sortOptions,limit, setLimit }) => {
       />
       <i className={'search-loupe'}/>
       <div className={'card-view'}>
-        <img className={'list'} src={list} alt="list" />
-        <img className={'grid'} src={grid} alt="grid" />
+        <img className={`list ${ 1}`} src={list} alt="list"
+             onClick={()=>setIsShow(true)}
+
+        />
+        <img className={`grid ${1 }`} src={grid} alt="grid"
+             onClick={()=>setIsShow(false)}
+
+        />
       </div>
     </div>
   );
