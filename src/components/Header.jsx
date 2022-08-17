@@ -35,7 +35,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button className="header__button">Get consultation</button>
+        <button className="button header__btn">Get consultation</button>
         <div className="login">
           <img src={person} alt="Log In" className="login-img" />
           <a href="#">Log in&nbsp;</a>

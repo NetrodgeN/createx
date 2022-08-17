@@ -1,0 +1,40 @@
+.subscribe__wrapper{
+  height: 564px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("/Subscribe.svg");
+}
+
+.subscribe__prelude-title{
+  font-size: 1.6rem;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color:$color-black;
+  margin: 120px 0 8px 0;
+}
+
+.subscribe__title{
+  text-align: center;
+  font-weight: 900;
+  font-size: 4.6rem;
+  line-height: 130%;
+  color:$color-black;
+  width: 810px;
+  margin: 0 0 60px 0;
+}
+
+.subscribe__input{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  height: 52px;
+  width: 422px;
+  background: white;
+  margin-right: 24px;
+}
+
+.subscribe__form{
+  display: flex;
+}

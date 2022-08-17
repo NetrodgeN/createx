@@ -1,6 +1,4 @@
-.header__button{
-  width: 206px;
-  height: 52px;
+.button{
   background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
   color: $color-white;
   border: none;
@@ -11,4 +9,12 @@
   line-height: 52px;
   letter-spacing: 0.5px;
   cursor: pointer;
+}
+.header__btn{
+  width: 206px;
+  height: 52px;
+}
+.subscribe__btn{
+  width: 154px;
+  height: 52px;
 }
