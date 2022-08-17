@@ -4,13 +4,25 @@ html{
   font-size: 10px;
   font-weight: 700;
 }
+
 body{
   font-size: 1.6rem;
 }
+
 a{
   text-decoration: none;
   color:$color-gray;
 }
+
 span{
   display: block;
+}
+
+select{
+  box-sizing: border-box;
+}
+
+option{
+  font-size: 1.4rem;
+  line-height: 21px;
 }

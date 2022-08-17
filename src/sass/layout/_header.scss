@@ -10,6 +10,7 @@
   height: 52px;
   padding: 20px 0 80px 0;
 }
+
 .logo{
   display: block;
   width: 130px;
@@ -17,40 +18,44 @@
   background: url("../../assets/logo.svg");
   background-size: 130px 22px;
 }
+
 .header__navigation{
   margin-right: auto;
   padding-left: 60px;
 }
+
 .header__list{
   display: flex;
   align-items: center;
   margin: 0;
   padding-left: 0;
 }
+
 .navigation__link{
   list-style: none;
   padding: 0 40px 0 0;
-
 }
+
 .nav-link{
   font-weight: 700;
-  //line-height: 25.6px;
 }
 
 .login{
   display: flex;
   align-items: center;
   padding-left: 36px;
-
 }
+
 .login-img{
   width: 20px;
   height: 20px;
   padding-right: 8px;
 }
+
 .open{
   color:$color-orange;
 }
+
 .slash{
   padding: 1px;
 }

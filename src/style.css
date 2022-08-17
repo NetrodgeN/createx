@@ -18,6 +18,15 @@ span {
   display: block;
 }
 
+select {
+  box-sizing: border-box;
+}
+
+option {
+  font-size: 1.4rem;
+  line-height: 21px;
+}
+
 .header__button {
   width: 206px;
   height: 52px;
@@ -30,6 +39,7 @@ span {
   font-size: 16px;
   line-height: 52px;
   letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -114,6 +124,19 @@ span {
   flex-direction: column;
   align-items: center;
 }
+.main-wrapper:before {
+  content: "";
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("/background.svg");
+  background-size: 100%;
+  z-index: -1;
+}
 
 .title-event-list {
   margin: 0;
@@ -139,18 +162,9 @@ span {
   background: inherit;
 }
 
-option {
-  font-size: 1.4rem;
-  line-height: 21px;
-}
-
 .light-gray {
   color: #787A80;
   font-size: 1.4rem;
-}
-
-select {
-  box-sizing: border-box;
 }
 
 .select-category {
@@ -297,6 +311,7 @@ input {
   justify-content: center;
   flex-direction: column;
   padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 .date-grid {
@@ -342,7 +357,7 @@ input {
 .event-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: space-between;
 }
 
 .active-list {

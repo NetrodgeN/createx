@@ -33,7 +33,6 @@ const Events = () => {
     return [...sortedEventCategory].sort((a, b) => (a.date > b.date ? 1 : -1));
   }, [filter.sort, events, sortedEventCategory]);
 
-  //старые и новые посты
   const sortedAndSearched = useMemo(() => {
     return sorted.filter((element) =>
       element.title.toLowerCase().includes(filter.search.toLowerCase())
@@ -46,7 +45,6 @@ const Events = () => {
   // if (error) {
   //   return <h1>{error}</h1>;
   // }
-  const [isGrid, setIsGrid] = useState('list');
 
   return (
     <div className="wrapper main-wrapper">
@@ -58,8 +56,6 @@ const Events = () => {
         sortOptions={sortOptions}
         setLimit={setLimit}
         limit={limit}
-        // isGrid={isGrid}
-        // setIsGrid={setIsGrid}
         isShow={isShow}
         setIsShow={setIsShow}
       />
