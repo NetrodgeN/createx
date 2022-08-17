@@ -50,7 +50,7 @@ const Events = () => {
     <div className="wrapper main-wrapper">
       <p className="title-event-list">OUR EVENTS</p>
       <h1 className="title-event-list-2">Lectures, workshops & master-classes</h1>
-      <EventFilter filter={filter} setFilter={setFilter} sortOptions={sortOptions} setLimit={setLimit} />
+      <EventFilter filter={filter} setFilter={setFilter} sortOptions={sortOptions} setLimit={setLimit} limit={limit} />
       <EventsList sortedEvent={sortedAndSearched} />
       {/*<div className='pages'>*/}
       {/*  {pages.map((page,index)=> <span key={index} className={currentPage === page ? 'current-page' : 'page'}>{page}</span>)}*/}
