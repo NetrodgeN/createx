@@ -25,9 +25,9 @@ const Footer = () => {
           </defs>
         </svg>
 
-        <p>Createx Online School is a leader in online studying. We have lots of courses and
-          programs from the main market experts. We provide relevant approaches to online learning,
-          internships and employment in the largest companies in the country. </p>
+        <p className={'footer__title'}>Createx Online School is a leader in online studying. We have lots of courses and
+          programs from the main market experts. We provide relevant approaches <br/> to online learning,
+          internships and employment <br/> in the largest companies in the country. </p>
         <div className={'footer__social'}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.6">
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       <ul className={'footer__list'}>
-        <li><a href='#'>SITE MAP</a></li>
+        <li>SITE MAP</li>
         <li><a href='#'>About Us</a></li>
         <li><a href='#'>Courses</a></li>
         <li><a href='#'>Events</a></li>
@@ -75,22 +75,47 @@ const Footer = () => {
         <li><a href='#'>Contacts</a></li>
       </ul>
       <ul className={'footer__list'}>
-        <li><a href='#'>COURSES</a></li>
+        <li>COURSES</li>
         <li><a href='#'>Marketing</a></li>
         <li><a href='#'>Management</a></li>
         <li><a href='#'>HR & Recruting</a></li>
         <li><a href='#'>Design</a></li>
         <li><a href='#'>Development</a></li>
       </ul>
-      <ul className={'footer__list'}>
-        <li><a href='#'><img src='#' alt='#' />(405)555-0128</a></li>
-        <li><a href='#'><img src='#' alt='#' />hello@createx.com</a></li>
+      <ul className={'footer__list footer__contactus'}>
+        <li>CONTACT US</li>
+        <li><a href='#'><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M5.66667 1.94796C5.11438 1.94796 4.66667 2.39567 4.66667 2.94796V13.0521C4.66667 13.6044 5.11438 14.0521 5.66667 14.0521H10.3333C10.8856 14.0521 11.3333 13.6044 11.3333 13.0521V2.94796C11.3333 2.39567 10.8856 1.94796 10.3333 1.94796H10.2777L10.1154 2.33759C10.0118 2.586 9.76912 2.74781 9.5 2.74781H6.5C6.23088 2.74781 5.98816 2.586 5.88463 2.33759L5.72226 1.94796H5.66667ZM3.33334 2.94796C3.33334 1.65929 4.378 0.614624 5.66667 0.614624H10.3333C11.622 0.614624 12.6667 1.65929 12.6667 2.94796V13.0521C12.6667 14.3408 11.622 15.3855 10.3333 15.3855H5.66667C4.378 15.3855 3.33334 14.3408 3.33334 13.0521V2.94796Z" fill="white"/>
+        </svg>
+          &ensp;(405) 555-0128</a></li>
+        <li><a href='#'><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fillRule="evenodd" clipRule="evenodd" d="M15.1667 12V4.66663C15.1667 3.56206 14.2712 2.66663 13.1667 2.66663L2.83333 2.66664C1.72876 2.66664 0.833328 3.56207 0.833328 4.66664V12C0.833328 13.1045 1.72876 14 2.83333 14L13.1667 14C14.2712 14 15.1667 13.1045 15.1667 12ZM13.8333 6.17293V12C13.8333 12.3681 13.5349 12.6666 13.1667 12.6666L2.83333 12.6666C2.46514 12.6666 2.16666 12.3681 2.16666 12L2.16666 6.17285L6.87544 9.37481C7.55416 9.83634 8.44596 9.83634 9.12468 9.37481L13.8333 6.17293ZM13.8257 4.5657C13.7771 4.2454 13.5005 3.99996 13.1667 3.99996L2.83333 3.99997C2.49948 3.99997 2.22294 4.24537 2.17427 4.56562L7.62519 8.27225C7.85143 8.42609 8.14869 8.42609 8.37493 8.27225L13.8257 4.5657Z" fill="white"/>
+        </svg>
+          &ensp;hello@createx.com</a></li>
       </ul>
       <div className='footer__subscribe'>
-        <h3>SIGN UP TO OUR NEWSLETTER</h3>
-        <input type='text' />
-        <p>*Subscribe to our newsletter to receive communications and early updates from Createx SEO Agency.</p>
+        <h3 className={'footer__subscribe-title'}>SIGN UP TO OUR NEWSLETTER</h3>
+        <form className={'footer__subscribe-form'}>
+          <input type='text' className={'footer__subscribe-input'} placeholder={'Email address'} />
+          <svg className={'footer__subscribe-line'} width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M7.86193 0.528636C8.12228 0.268287 8.54439 0.268287 8.80474 0.528636L11.8047 3.52864C12.0651 3.78899 12.0651 4.2111 11.8047 4.47145L8.80474 7.47145C8.54439 7.7318 8.12228 7.7318 7.86193 7.47145C7.60158 7.2111 7.60158 6.78899 7.86193 6.52864L9.72386 4.66671H0.666667C0.298477 4.66671 0 4.36823 0 4.00004C0 3.63185 0.298477 3.33337 0.666667 3.33337H9.72386L7.86193 1.47145C7.60158 1.2111 7.60158 0.788986 7.86193 0.528636Z" fill="white"/>
+          </svg>
+
+        </form>
+        <p className={'footer__subscribe-p'}>*Subscribe to our newsletter to receive communications and &nbsp; early updates from Createx SEO Agency.</p>
       </div>
+      </div>
+      <div className={'footer__copyright'}>
+        <div className='wrapper  copyright__wrapper'>
+        <div className='copyright'>
+          <p>© All rights reserved. Made with&ensp; <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M7.99956 12.2719C4.93352 10.5256 3.22348 8.78992 2.39657 7.28398C1.55023 5.74265 1.62407 4.44446 2.09371 3.5231C3.05902 1.62928 5.80409 1.02369 7.4766 3.13902L7.99952 3.80038L8.52248 3.13905C10.1953 1.02364 12.9405 1.62932 13.9058 3.5231C14.3754 4.44445 14.4492 5.74263 13.6028 7.28396C12.7759 8.78991 11.0657 10.5256 7.99956 12.2719ZM7.99958 1.73763C5.64678 -0.498115 2.17585 0.425912 0.905793 2.9176C0.208765 4.28507 0.199244 6.05249 1.22784 7.92572C2.2473 9.78234 4.27991 11.7421 7.67706 13.6197L7.99955 13.798L8.32204 13.6197C11.7193 11.7421 13.752 9.78236 14.7716 7.92574C15.8002 6.05251 15.7907 4.28508 15.0937 2.9176C13.8236 0.425864 10.3526 -0.498082 7.99958 1.73763Z" fill="#FF3F3A"/>
+          </svg>
+            &ensp;by Createx Studio </p>
+
+        </div>
+          <a href='#'>GO TO TOP</a>
+        </div>
       </div>
     </footer>
   );

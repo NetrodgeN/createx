@@ -29,7 +29,7 @@ option {
 
 .button {
   background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   font-weight: 700;
@@ -299,7 +299,7 @@ input {
 }
 .event-button:hover {
   background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .shadow:hover {
@@ -359,7 +359,7 @@ input {
 }
 .event-button-grid:hover {
   background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .event-list {
@@ -419,6 +419,118 @@ input {
 
 .footer__wrapper {
   display: flex;
+  height: 338px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_left-block {
+  margin-top: 20px;
+}
+
+.footer__social {
+  display: flex;
+  width: 244px;
+  height: 24px;
+  justify-content: space-between;
+}
+
+.footer__list {
+  padding-left: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 197px;
+}
+.footer__list > li {
+  list-style: none;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+.footer__list > li > a {
+  font-weight: 400;
+  color: #A4A5AAFF;
+}
+.footer__list > li:first-child {
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.footer__contactus {
+  height: 96px;
+  margin-bottom: 99px;
+}
+
+.footer__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 18px;
+  width: 279px;
+  height: 90px;
+  color: #ffffff;
+  opacity: 0.6;
+  margin: 24px 0 38px 0;
+}
+
+.footer__subscribe {
+  width: 286px;
+  margin-top: 38px;
+  margin-bottom: 80px;
+}
+
+.footer__subscribe-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 27px;
+}
+
+.footer__subscribe-p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.footer__subscribe-input {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 9px 0 9px 12px;
+  color: #afb0b4;
+}
+
+.footer__subscribe-line {
+  position: relative;
+  top: -27px;
+  left: 259px;
+}
+
+.footer__copyright {
+  background: #292c37;
+  height: 58px;
+  display: flex;
+}
+
+.copyright__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 18px;
+}
+.copyright > p {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
