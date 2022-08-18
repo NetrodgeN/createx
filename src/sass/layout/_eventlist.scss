@@ -139,19 +139,7 @@ input{
   color:$color-light-gray;
 }
 
-.pages{
-  margin: 20px 0;
-  .page, .current-page{
-    border: 1px solid $color-orange;
-    border-radius: 100%;
-    padding: 5px 10px;
-    margin: 0 10px;
-    cursor: pointer;
-  }
-  .current-page{
-    font-weight: 700 ;
-  }
-}
+
 
 .grid{
   padding-right: 10px;

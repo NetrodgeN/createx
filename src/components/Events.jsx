@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getEvents } from '../store/action-creators/action';
 import EventsList from './EventsList';
 import EventFilter from './EventFilter';
+import Pagination from './Pagination';
 
 const Events = () => {
   const [filter, setFilter] = useState({ category: 'all themes', sort: '', search: '' });
   const { events, error, loading } = useSelector((state) => state.events);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(9)
+  const [limit, setLimit] = useState(9);// кол-во страниц на странице
   const [isShow, setIsShow] = useState(true);
 
   const sortOptions = [...new Set([...events].map((e) => e.type))];
@@ -38,14 +39,15 @@ const Events = () => {
       element.title.toLowerCase().includes(filter.search.toLowerCase())
     );
   }, [filter.search, sortedEventCategory, sorted, events]);
+  const lastEventIndex = page * limit
+  const firstEventIndex = lastEventIndex - limit
+  const currentEvent = sortedAndSearched.slice(firstEventIndex, lastEventIndex)
 
-  // if (loading) {
-  //   return <h1>идёт загрузка</h1>;
-  // }
-  // if (error) {
-  //   return <h1>{error}</h1>;
-  // }
+  const paginate = (pageNumber) => setPage(pageNumber)
 
+  if(error){
+    return <h1 className={'error'} >{error}</h1>
+  }
   return (
     <div className="wrapper main-wrapper">
       <p className="title-event-list">OUR EVENTS</p>
@@ -59,10 +61,11 @@ const Events = () => {
         isShow={isShow}
         setIsShow={setIsShow}
       />
-      <EventsList sortedEvent={sortedAndSearched} isShow={isShow}/>
-      {/*<div className='pages'>*/}
-      {/*  {pages.map((page,index)=> <span key={index} className={currentPage === page ? 'current-page' : 'page'}>{page}</span>)}*/}
-      {/*</div>*/}
+      {loading
+        ? <h1 className={'loader'}> Loading </h1>
+        : <EventsList sortedEvent={currentEvent} isShow={isShow}/>
+      }
+      <Pagination page={page} limit={limit} totalEvents={sortedAndSearched.length} paginate={paginate}/>
     </div>
   );
 };

@@ -3,6 +3,7 @@ html{
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-weight: 700;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -25,4 +26,14 @@ select{
 option{
   font-size: 1.4rem;
   line-height: 21px;
+}
+
+.error{
+  text-align: center;
+  color: #FF3F3A;
+}
+.loader{
+  text-align: center;
+  height: 800px;
+  color: #FF3F3A;
 }

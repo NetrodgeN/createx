@@ -1,0 +1,19 @@
+
+
+.pagination__container{
+  margin: 42px 0 184px 0;
+}
+.pagination{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  .current-page{
+    color:$color-orange;
+    padding: 5px 10px;
+    cursor: pointer;
+}}
+
+.page-item{
+  list-style: none;
+}

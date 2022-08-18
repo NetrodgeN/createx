@@ -3,6 +3,7 @@ html {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   font-weight: 700;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +26,17 @@ select {
 option {
   font-size: 1.4rem;
   line-height: 21px;
+}
+
+.error {
+  text-align: center;
+  color: #FF3F3A;
+}
+
+.loader {
+  text-align: center;
+  height: 800px;
+  color: #FF3F3A;
 }
 
 .button {
@@ -252,20 +264,6 @@ input {
   color: #787A80;
 }
 
-.pages {
-  margin: 20px 0;
-}
-.pages .page, .pages .current-page {
-  border: 1px solid #FF3F3A;
-  border-radius: 100%;
-  padding: 5px 10px;
-  margin: 0 10px;
-  cursor: pointer;
-}
-.pages .current-page {
-  font-weight: 700;
-}
-
 .grid {
   padding-right: 10px;
 }
@@ -417,6 +415,11 @@ input {
   display: flex;
 }
 
+.footer {
+  height: 396px;
+  background: #1E212C;
+}
+
 .footer__wrapper {
   display: flex;
   height: 338px;
@@ -531,6 +534,26 @@ input {
 }
 .copyright > p {
   margin: 0;
+}
+
+.pagination__container {
+  margin: 42px 0 184px 0;
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+.pagination .current-page {
+  color: #FF3F3A;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.page-item {
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */
