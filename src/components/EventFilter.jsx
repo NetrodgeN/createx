@@ -1,7 +1,7 @@
 import React from 'react';
 import MySelect from './select/MySelect';
 
-const EventFilter = ({ filter, setFilter, sortOptions, limit, setLimit, isShow, setIsShow }) => {
+const EventFilter = ({ filter, setFilter, sortOptions, limit, setLimit, isShow, setIsShow,setPage }) => {
   let style = 'active-list';
   let activeGrid = '';
   if (isShow === false) {
@@ -16,7 +16,7 @@ const EventFilter = ({ filter, setFilter, sortOptions, limit, setLimit, isShow, 
         <MySelect
           className={'select-category check-box'}
           value={filter.category}
-          onChange={(selectedSort) => setFilter({ ...filter, category: selectedSort })}
+          onChange={(selectedSort) => setFilter({ ...filter, category: selectedSort }, setPage(1))}
           options={sortOptions}
           defaultValue={'all themes'}
         />

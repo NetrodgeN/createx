@@ -9,7 +9,7 @@ const Events = () => {
   const [filter, setFilter] = useState({ category: 'all themes', sort: '', search: '' });
   const { events, error, loading } = useSelector((state) => state.events);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(9);// кол-во страниц на странице
+  const [limit, setLimit] = useState(9);
   const [isShow, setIsShow] = useState(true);
 
   const sortOptions = [...new Set([...events].map((e) => e.type))];
@@ -39,6 +39,7 @@ const Events = () => {
       element.title.toLowerCase().includes(filter.search.toLowerCase())
     );
   }, [filter.search, sortedEventCategory, sorted, events]);
+
   const lastEventIndex = page * limit
   const firstEventIndex = lastEventIndex - limit
   const currentEvent = sortedAndSearched.slice(firstEventIndex, lastEventIndex)
@@ -60,6 +61,7 @@ const Events = () => {
         limit={limit}
         isShow={isShow}
         setIsShow={setIsShow}
+        setPage={setPage}
       />
       {loading
         ? <h1 className={'loader'}> Loading </h1>
