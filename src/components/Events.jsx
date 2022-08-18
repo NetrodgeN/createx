@@ -19,7 +19,6 @@ const Events = () => {
     dispatch(getEvents(page, limit));
   }, [page, limit]);
 
-  //категории сотрировка
   const sortedEventCategory = useMemo(() => {
     if (filter.category !== 'all themes') {
       return [...events].filter((a) => a.type === filter.category);
@@ -40,15 +39,16 @@ const Events = () => {
     );
   }, [filter.search, sortedEventCategory, sorted, events]);
 
-  const lastEventIndex = page * limit
-  const firstEventIndex = lastEventIndex - limit
-  const currentEvent = sortedAndSearched.slice(firstEventIndex, lastEventIndex)
+  const lastEventIndex = page * limit;
+  const firstEventIndex = lastEventIndex - limit;
+  const currentEvent = sortedAndSearched.slice(firstEventIndex, lastEventIndex);
 
-  const paginate = (pageNumber) => setPage(pageNumber)
+  const paginate = (pageNumber) => setPage(pageNumber);
 
-  if(error){
-    return <h1 className={'error'} >{error}</h1>
+  if (error) {
+    return <h1 className={'error'}>{error}</h1>;
   }
+
   return (
     <div className="wrapper main-wrapper">
       <p className="title-event-list">OUR EVENTS</p>
@@ -63,11 +63,17 @@ const Events = () => {
         setIsShow={setIsShow}
         setPage={setPage}
       />
-      {loading
-        ? <h1 className={'loader'}> Loading </h1>
-        : <EventsList sortedEvent={currentEvent} isShow={isShow}/>
-      }
-      <Pagination page={page} limit={limit} totalEvents={sortedAndSearched.length} paginate={paginate}/>
+      {loading ? (
+        <h1 className={'loader'}> Loading </h1>
+      ) : (
+        <EventsList sortedEvent={currentEvent} isShow={isShow} />
+      )}
+      <Pagination
+        page={page}
+        limit={limit}
+        totalEvents={sortedAndSearched.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
