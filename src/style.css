@@ -264,18 +264,32 @@ input {
   color: #787A80;
 }
 
+.pages {
+  margin: 20px 0;
+}
+.pages .page, .pages .current-page {
+  border: 1px solid #FF3F3A;
+  border-radius: 100%;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.pages .current-page {
+  font-weight: 700;
+}
+
 .grid {
   padding-right: 10px;
 }
 
+.search-event__form {
+  position: relative;
+}
+
 .search-loupe {
-  box-sizing: border-box;
-  background: url("search.png");
-  width: 16px;
-  height: 16px;
   position: absolute;
-  top: 320px;
-  left: 1444px;
+  top: 14px;
+  left: 252px;
 }
 
 .event-list {

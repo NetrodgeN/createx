@@ -42,14 +42,18 @@ const EventFilter = ({ filter, setFilter, sortOptions, limit, setLimit, isShow, 
         />
         <span className={'light-gray'}>events per page</span>
       </div>
-      <input
+      <form className={'search-event__form'}>
+        <input
         className={'check-box search-input'}
         type="search"
         placeholder={'Search event...'}
         value={filter.search}
         onChange={(e) => setFilter({ ...filter, search: e.target.value })}
       />
-      <i className={'search-loupe'} />
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={'search-loupe'}>
+          <path fillRule="evenodd" clipRule="evenodd" d="M7.25001 2.16671C4.44256 2.16671 2.16668 4.44259 2.16668 7.25004C2.16668 10.0575 4.44256 12.3334 7.25001 12.3334C8.6526 12.3334 9.92145 11.7662 10.8419 10.8471C11.764 9.92625 12.3333 8.65526 12.3333 7.25004C12.3333 4.44259 10.0575 2.16671 7.25001 2.16671ZM0.833344 7.25004C0.833344 3.70621 3.70618 0.833374 7.25001 0.833374C10.7938 0.833374 13.6667 3.70621 13.6667 7.25004C13.6667 8.78285 13.1286 10.1909 12.232 11.2943L14.971 14.0282C15.2316 14.2883 15.232 14.7104 14.9718 14.971C14.7117 15.2316 14.2896 15.232 14.029 14.9719L11.2887 12.2365C10.1862 13.1304 8.78023 13.6667 7.25001 13.6667C3.70618 13.6667 0.833344 10.7939 0.833344 7.25004Z" fill="#9A9CA5"/>
+        </svg></form>
+
       <div className={'card-view'}>
         <svg
           width="20"
