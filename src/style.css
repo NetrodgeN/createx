@@ -294,6 +294,7 @@ input {
 
 .event-list {
   margin-top: 60px;
+  flex-wrap: wrap;
 }
 
 .event-button {
