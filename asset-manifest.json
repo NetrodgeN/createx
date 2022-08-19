@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/createx/static/css/main.794ec9bf.css",
-    "main.js": "/createx/static/js/main.a2c93f8d.js",
+    "main.css": "/createx/static/css/main.81092261.css",
+    "main.js": "/createx/static/js/main.4206e735.js",
     "static/media/Subscribe.svg": "/createx/static/media/Subscribe.2fb1e4456b16bad6e387.svg",
     "static/media/background.svg": "/createx/static/media/background.10c0fc718fa84616c730.svg",
     "static/media/logo.svg": "/createx/static/media/logo.2398cff732a28a3af710.svg",
     "static/media/Person.svg": "/createx/static/media/Person.1e45c7cacaf5deeccc7fe2a70947c5dd.svg",
     "index.html": "/createx/index.html",
-    "main.794ec9bf.css.map": "/createx/static/css/main.794ec9bf.css.map",
-    "main.a2c93f8d.js.map": "/createx/static/js/main.a2c93f8d.js.map"
+    "main.81092261.css.map": "/createx/static/css/main.81092261.css.map",
+    "main.4206e735.js.map": "/createx/static/js/main.4206e735.js.map"
   },
   "entrypoints": [
-    "static/css/main.794ec9bf.css",
-    "static/js/main.a2c93f8d.js"
+    "static/css/main.81092261.css",
+    "static/js/main.4206e735.js"
   ]
 }
