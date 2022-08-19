@@ -16,8 +16,8 @@ const Events = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getEvents(page, limit));
-  }, [page, limit]);
+    dispatch(getEvents());
+  }, []);
 
   const sortedEventCategory = useMemo(() => {
     if (filter.category !== 'all themes') {

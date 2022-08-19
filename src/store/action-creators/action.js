@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getEvents = (pages=1, limit) => {
+export const getEvents = () => {
   return async (dispatch) => {
     try {
       dispatch({ type: 'FETCH_EVENTS' });

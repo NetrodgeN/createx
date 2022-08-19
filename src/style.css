@@ -332,7 +332,7 @@ input {
   justify-content: center;
   flex-direction: column;
   padding-left: 20px;
-  margin-bottom: 20px;
+  margin: 0 20px 20px 0;
 }
 
 .date-grid {
@@ -377,8 +377,7 @@ input {
 
 .event-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .active-list {
