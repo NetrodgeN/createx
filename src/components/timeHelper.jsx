@@ -28,8 +28,18 @@ export const timeMonth = (time) => {
 };
 
 export const timeDate = (time) => {
-  let date = time.substr(8, 2);
-  return date;
+  let day = time.substr(8, 2);
+  return day;
+};
+
+export const timeDurationUTC = (event) => {
+  let start = event.date.substr(11, 8);
+  let end = new Date(+new Date(event.date) + event.duration);
+  let hh = end.getUTCHours();
+  let min = end.getUTCMinutes();
+  let sec = end.toString().substr(22, 2);
+
+  return `${start} - ${hh}:${min}:${sec}`;
 };
 
 export default function timeConversion(millisec) {

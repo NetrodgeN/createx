@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import timeConversion, { timeDate, timeMonth } from './timeHelper';
+import { timeDate, timeDurationUTC, timeMonth } from './timeHelper';
 
 const EventsList = ({ sortedEvent, isShow }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -22,7 +22,7 @@ const EventsList = ({ sortedEvent, isShow }) => {
                 <span className="dd">{timeDate(event.date)}</span>
                 <span className="month">
                   {timeMonth(event.date)}
-                  <span className={'duration'}>{timeConversion(event.duration)}</span>
+                  <span className={'duration'}>{timeDurationUTC(event)}</span>
                 </span>
               </div>
 
@@ -46,7 +46,7 @@ const EventsList = ({ sortedEvent, isShow }) => {
                 <span className="dd-grid">
                   {timeDate(event.date)} {timeMonth(event.date).substr(0, 3)}
                 </span>
-                <span className={'duration'}>{timeConversion(event.duration)}</span>
+                <span className={'duration'}>{timeDurationUTC(event)}</span>
               </div>
 
               <div className={'event-title__container-grid'}>
