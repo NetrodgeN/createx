@@ -42,22 +42,3 @@ export const timeDurationUTC = (event) => {
   return `${start} - ${hh}:${min}:${sec}`;
 };
 
-export default function timeConversion(millisec) {
-  const seconds = Number((millisec / 1000).toFixed(1));
-
-  const minutes = Number((millisec / (1000 * 60)).toFixed(1));
-
-  const hours = Number((millisec / (1000 * 60 * 60)).toFixed(1));
-
-  const days = Number((millisec / (1000 * 60 * 60 * 24)).toFixed(1));
-
-  if (seconds < 60) {
-    return `${seconds} Sec`;
-  } else if (minutes < 60) {
-    return `${minutes} Min`;
-  } else if (hours < 24) {
-    return `${hours} Hrs`;
-  } else {
-    return `${days} Days`;
-  }
-};
